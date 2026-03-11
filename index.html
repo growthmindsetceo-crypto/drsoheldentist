@@ -121,30 +121,64 @@
             color: var(--primary);
         }
 
-        /* Emergency Banner */
-        .emergency-banner {
-            background: var(--secondary);
-            color: white;
-            text-align: center;
-            padding: 0.5rem;
-            font-weight: 600;
-            position: fixed;
-            top: 70px;
-            width: 100%;
-            z-index: 999;
-            animation: pulse 2s infinite;
-        }
+   /* Emergency Banner */
+.emergency-banner {
+    background: var(--secondary);
+    color: white;
+    text-align: center;
+    padding: 0.6rem 10px;
+    font-weight: 600;
+    position: fixed;
+    top: 70px;
+    width: 100%;
+    z-index: 999;
 
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
-        }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
 
-        .emergency-banner a {
-            color: white;
-            text-decoration: underline;
-            margin-left: 1rem;
-        }
+    animation: pulse 2s infinite;
+}
+
+/* blinking animation */
+@keyframes pulse {
+    0%,100% { opacity:1; }
+    50% { opacity:0.75; }
+}
+
+.emergency-banner a {
+    color: white;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+/* MOBILE FIX */
+@media (max-width:600px){
+
+    .emergency-banner{
+        flex-direction: column;
+        font-size:13px;
+        gap:4px;
+        padding:6px 8px;   /* smaller red area */
+        line-height:1.2;
+    }
+
+    .emergency-banner a{
+        background:white;
+        color:var(--secondary);
+        padding:4px 12px;   /* smaller button */
+        border-radius:6px;
+        font-weight:700;
+        text-decoration:none;
+        display:inline-block;
+        font-size:14px;
+    }
+
+}    }
+
+}
 
         /* Hero Section */
         .hero {
@@ -1029,26 +1063,6 @@
             transform: translateY(-5px);
         }
 
-        /* Chat Widget Placeholder */
-        .chat-widget {
-            position: fixed;
-            bottom: 100px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background: var(--secondary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
-            z-index: 998;
-            transition: all 0.3s;
-            font-size: 1.5rem;
-        }
-
         .chat-widget:hover {
             transform: scale(1.1);
         }
@@ -1094,18 +1108,25 @@
         }
 
         @media (max-width: 576px) {
-            .features-container {
-                grid-template-columns: 1fr;
-            }
 
-            .hero-buttons {
-                flex-direction: column;
-            }
+    .features-container {
+        grid-template-columns: 1fr;
+    }
 
-            .floating-card {
-                display: none;
-            }
-        }
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .floating-card {
+        display: none;
+    }
+
+    /* Fix hero overlap with emergency banner */
+    .hero{
+        margin-top:140px;
+    }
+
+}
 
         /* Loading Animation */
         .loader {
@@ -1169,10 +1190,13 @@
         </div>
     </div>
 
-    <!-- Emergency Banner -->
     <div class="emergency-banner">
-        🚨 Dental Emergency? Call Now: <a href="tel:+918778715877">087787 15877</a> | Open 24/7 for Emergencies
-    </div>
+🚨 Dental Emergency? Call Now:
+<a href="tel:+918778715877" class="call-btn">
+📞 087787 15877
+</a>
+<span class="hours"></span>
+</div>
 
     <!-- Navigation -->
     <nav id="navbar">
