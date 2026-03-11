@@ -1178,6 +1178,39 @@
             display: block;
             animation: fadeIn 0.5s;
         }
+/* MOBILE FIX FOR EMERGENCY BANNER */
+@media (max-width:600px){
+
+.emergency-banner{
+    width:100%;
+    padding:6px 8px;
+    font-size:13px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+    gap:5px;
+}
+
+.emergency-banner a{
+    display:inline-block;
+    background:white;
+    color:var(--secondary);
+    padding:4px 10px;
+    border-radius:6px;
+    font-size:14px;
+    font-weight:700;
+    text-decoration:none;
+}
+
+.hours{
+    font-size:12px;
+}
+
+}
     </style>
 </head>
 <body>
