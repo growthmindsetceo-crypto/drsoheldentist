@@ -121,7 +121,7 @@
             color: var(--primary);
         }
 
-   /* Emergency Banner */
+        /* Emergency Banner */
 .emergency-banner {
     background: var(--secondary);
     color: white;
@@ -132,53 +132,42 @@
     top: 70px;
     width: 100%;
     z-index: 999;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
-
     animation: pulse 2s infinite;
-}
 
-/* blinking animation */
-@keyframes pulse {
-    0%,100% { opacity:1; }
-    50% { opacity:0.75; }
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+    flex-wrap:wrap;
 }
 
 .emergency-banner a {
     color: white;
-    font-weight: 700;
     text-decoration: underline;
+    font-weight:700;
 }
 
-/* MOBILE FIX */
+/* Mobile Fix */
 @media (max-width:600px){
 
     .emergency-banner{
-        flex-direction: column;
-        font-size:13px;
+        flex-direction:column;
+        font-size:14px;
         gap:4px;
-        padding:6px 8px;   /* smaller red area */
-        line-height:1.2;
+        padding:10px;
     }
 
     .emergency-banner a{
         background:white;
         color:var(--secondary);
-        padding:4px 12px;   /* smaller button */
+        padding:5px 12px;
         border-radius:6px;
-        font-weight:700;
         text-decoration:none;
-        display:inline-block;
-        font-size:14px;
+        font-size:15px;
     }
 
-}    }
-
 }
+        }
 
         /* Hero Section */
         .hero {
@@ -1063,6 +1052,26 @@
             transform: translateY(-5px);
         }
 
+        /* Chat Widget Placeholder */
+        .chat-widget {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+            z-index: 998;
+            transition: all 0.3s;
+            font-size: 1.5rem;
+        }
+
         .chat-widget:hover {
             transform: scale(1.1);
         }
@@ -1108,25 +1117,18 @@
         }
 
         @media (max-width: 576px) {
+            .features-container {
+                grid-template-columns: 1fr;
+            }
 
-    .features-container {
-        grid-template-columns: 1fr;
-    }
+            .hero-buttons {
+                flex-direction: column;
+            }
 
-    .hero-buttons {
-        flex-direction: column;
-    }
-
-    .floating-card {
-        display: none;
-    }
-
-    /* Fix hero overlap with emergency banner */
-    .hero{
-        margin-top:140px;
-    }
-
-}
+            .floating-card {
+                display: none;
+            }
+        }
 
         /* Loading Animation */
         .loader {
@@ -1178,9 +1180,6 @@
             display: block;
             animation: fadeIn 0.5s;
         }
-.success-message.show {
-
-}
     </style>
 </head>
 <body>
@@ -1195,8 +1194,8 @@
 
     <!-- Emergency Banner -->
     <div class="emergency-banner">
-        🚨 Dental Emergency? Call Now: <a href="tel:+918778715877">087787 15877</a>
-</div>
+        🚨 Dental Emergency? Call Now: <a href="tel:+918778715877">087787 15877</a> | Open 24/7 for Emergencies
+    </div>
 
     <!-- Navigation -->
     <nav id="navbar">
@@ -1228,35 +1227,20 @@
                 <div class="subtitle">Gentle Hands, Brighter Smiles</div>
                 <p>Welcome to Dr. Sohel Dental Care in Berhampore. We combine advanced technology with compassionate care to give you the healthy, beautiful smile you deserve. From routine checkups to complex procedures, your comfort is our priority.</p>
                 <div class="hero-buttons">
-                   
-
-<a href="https://wa.me/message/7G6OYWHTEVKUE1" 
-   class="btn btn-primary"
-   target="_blank"
-   rel="noopener">
-
-<i class="fab fa-whatsapp"></i>
-Book Appointment
-</a>
-
-
+                    <a href="#appointment" class="btn btn-primary">
+                        <i class="fas fa-calendar-check"></i>
+                        Book Appointment
+                    </a>
                     <a href="tel:+918778715877" class="btn btn-secondary">
                         <i class="fas fa-phone"></i>
                         Call Now
                     </a>
-
-
-
-
                 </div>
             </div>
             <div class="hero-image">
 
 
-
-               <img src="https://raw.githubusercontent.com/growthmindsetceo-crypto/drsoheldentist/main/Gemini_Generated_Image_b0hkqib0hkqib0hk.png" alt="Gemini_Generated_Image_b0hkqib0hkqib0hk">
-
-
+               <img src="images/2023-04-12.webp" alt="drsoheldentist">
 
 
                 <div class="floating-card card-1">
@@ -1380,15 +1364,7 @@ Book Appointment
     <section class="about" id="about">
         <div class="about-container">
             <div class="about-image">
-
-
-
-
-
-                <img src="https://raw.githubusercontent.com/growthmindsetceo-crypto/drsoheldentist/main/Gemini_Generated_Image_b0hkqib0hkqib0hk.png" alt="Gemini_Generated_Image_b0hkqib0hkqib0hk">
-
-
-
+                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dr. Sohel">
                 <div class="experience-badge">
                     <div class="years">10+</div>
                     <div class="text">Years<br>Experience</div>
@@ -1481,7 +1457,7 @@ Book Appointment
             </div>
         </div>
         <div style="text-align: center; margin-top: 2rem;">
-            <p style="color: #666; font-style: italic;"></p>
+            <p style="color: #666; font-style: italic;">* Replace with actual patient photos (with consent) for maximum impact</p>
         </div>
     </section>
 
